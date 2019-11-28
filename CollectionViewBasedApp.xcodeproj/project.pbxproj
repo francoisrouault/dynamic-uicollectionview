@@ -23,6 +23,7 @@
 		F5B23C5823902C010021AFED /* CollectionViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B23C5623902C010021AFED /* CollectionViewCollectionViewCell.swift */; };
 		F5B23C5923902C010021AFED /* CollectionViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5B23C5723902C010021AFED /* CollectionViewCollectionViewCell.xib */; };
 		F5B23C5B239039C20021AFED /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B23C5A239039C20021AFED /* Item.swift */; };
+		F5B23C5D2390467D0021AFED /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B23C5C2390467D0021AFED /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		F5B23C5623902C010021AFED /* CollectionViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCollectionViewCell.swift; sourceTree = "<group>"; };
 		F5B23C5723902C010021AFED /* CollectionViewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCollectionViewCell.xib; sourceTree = "<group>"; };
 		F5B23C5A239039C20021AFED /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		F5B23C5C2390467D0021AFED /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		F5B23C2723900B1E0021AFED = {
 			isa = PBXGroup;
 			children = (
+				F5B23C5C2390467D0021AFED /* README.md */,
 				F5B23C3223900B1E0021AFED /* CollectionViewBasedApp */,
 				F5B23C3123900B1E0021AFED /* Products */,
 			);
@@ -166,6 +169,7 @@
 				F5B23C4023900B220021AFED /* LaunchScreen.storyboard in Resources */,
 				F5B23C5923902C010021AFED /* CollectionViewCollectionViewCell.xib in Resources */,
 				F5B23C4D239015F90021AFED /* UserCollectionViewCell.xib in Resources */,
+				F5B23C5D2390467D0021AFED /* README.md in Resources */,
 				F5B23C3D23900B220021AFED /* Assets.xcassets in Resources */,
 				F5B23C3B23900B1E0021AFED /* Main.storyboard in Resources */,
 				F5B23C512390160D0021AFED /* ImageCollectionViewCell.xib in Resources */,
