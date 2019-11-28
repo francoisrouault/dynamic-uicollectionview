@@ -33,8 +33,11 @@ extension CollectionViewCollectionViewCell: UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let item = items[indexPath.item]
-    let cell = item.dequeue(from: collectionView, for: indexPath)
+
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: item.reuseIdentifier(), for: indexPath) as? (UICollectionViewCell & CellProtocol) else { fatalError() }
+
     cell.bind(with: item)
+
     return cell
   }
 }
@@ -78,7 +81,7 @@ extension CollectionViewCollectionViewCell: CellProtocol {
     guard case let Item.collection(innerItems, scrollDirection) = item else { fatalError() }
 
     items = innerItems
-    items.forEach { $0.register(in: collectionView) }
+    items.forEach { collectionView.register($0.nib(), forCellWithReuseIdentifier: $0.reuseIdentifier()) }
     flowLayout.scrollDirection = scrollDirection
     collectionView.reloadData()
   }

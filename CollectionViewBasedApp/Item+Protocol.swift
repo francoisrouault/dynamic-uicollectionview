@@ -10,26 +10,18 @@ import UIKit
 
 protocol ItemProtocol {
   var cellType: CellProtocol.Type { get }
-  func register(in collectionView: UICollectionView)
-  func dequeue(from collectionView: UICollectionView, for indexPath: IndexPath) -> UICollectionViewCell & CellProtocol
+  func nib() -> UINib
+  func reuseIdentifier() -> String
 }
 
 // MARK: Default implementation
 
 extension ItemProtocol {
-  func register(in collectionView: UICollectionView) {
-    collectionView.register(nib(), forCellWithReuseIdentifier: identifier())
-  }
-
-  func dequeue(from collectionView: UICollectionView, for indexPath: IndexPath) -> UICollectionViewCell & CellProtocol {
-    return collectionView.dequeueReusableCell(withReuseIdentifier: identifier(), for: indexPath) as! (UICollectionViewCell & CellProtocol)
-  }
-
-  private func nib() -> UINib {
+  func nib() -> UINib {
     UINib(nibName: "\(cellType)", bundle: nil)
   }
 
-  private func identifier() -> String {
+  func reuseIdentifier() -> String {
     String(describing: cellType)
   }
 }
