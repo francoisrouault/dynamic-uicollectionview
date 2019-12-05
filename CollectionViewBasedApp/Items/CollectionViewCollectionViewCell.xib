@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="285" height="213"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bwf-Kk-0hp">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bwf-Kk-0hp" customClass="ItemCollectionView" customModule="CollectionViewBasedApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="285" height="213"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aF5-CF-PBY">

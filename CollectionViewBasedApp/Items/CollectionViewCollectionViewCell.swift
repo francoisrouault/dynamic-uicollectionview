@@ -12,7 +12,7 @@ class CollectionViewCollectionViewCell: UICollectionViewCell {
 
   let flowLayout = UICollectionViewFlowLayout()
 
-  @IBOutlet weak var collectionView: UICollectionView!
+  @IBOutlet weak var collectionView: ItemCollectionView!
 
   var items: [Item]!
 
@@ -21,39 +21,6 @@ class CollectionViewCollectionViewCell: UICollectionViewCell {
     // Initialization code
 
     collectionView.collectionViewLayout = flowLayout
-    collectionView.dataSource = self
-    collectionView.delegate = self
-  }
-}
-
-extension CollectionViewCollectionViewCell: UICollectionViewDataSource {
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { items.count }
-
-  func numberOfSections(in collectionView: UICollectionView) -> Int { 1 }
-
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let item = items[indexPath.item]
-
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: item.reuseIdentifier(), for: indexPath) as? (UICollectionViewCell & CellProtocol) else { fatalError() }
-
-    cell.bind(with: item)
-
-    return cell
-  }
-}
-
-extension CollectionViewCollectionViewCell: UICollectionViewDelegateFlowLayout {
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let item = items[indexPath.item]
-    return item.cellType.size(for: item, in: collectionView, at: indexPath)
-  }
-
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    return 0
-  }
-
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-    return 0
   }
 }
 
@@ -80,9 +47,8 @@ extension CollectionViewCollectionViewCell: CellProtocol {
   func bind(with item: ItemProtocol) {
     guard case let Item.collection(innerItems, scrollDirection) = item else { fatalError() }
 
-    items = innerItems
-    items.forEach { collectionView.register($0.nib(), forCellWithReuseIdentifier: $0.reuseIdentifier()) }
     flowLayout.scrollDirection = scrollDirection
-    collectionView.reloadData()
+
+    collectionView.items = innerItems
   }
 }
