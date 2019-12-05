@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  @IBOutlet weak var collectionView: UICollectionView!
+  @IBOutlet weak var collectionView: ItemCollectionView!
 
   let items: [Item] = [
     .image(source: URL(string: "https://dummyimage.com/400x400/ffff00/000000.png&text=image1")!),
@@ -40,44 +40,6 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let flowLayout = UICollectionViewFlowLayout()
-    collectionView.collectionViewLayout = flowLayout
-    collectionView.dataSource = self
-    collectionView.delegate = self
-
-    items.forEach {
-      collectionView.register($0.nib(), forCellWithReuseIdentifier: $0.reuseIdentifier())
-    }
-  }
-}
-
-extension ViewController: UICollectionViewDataSource {
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { items.count }
-
-  func numberOfSections(in collectionView: UICollectionView) -> Int { 1 }
-
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let item = items[indexPath.item]
-
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: item.reuseIdentifier(), for: indexPath) as? (UICollectionViewCell & CellProtocol) else { fatalError() }
-
-    cell.bind(with: item)
-
-    return cell
-  }
-}
-
-extension ViewController: UICollectionViewDelegateFlowLayout {
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let item = items[indexPath.item]
-    return item.cellType.size(for: item, in: collectionView, at: indexPath)
-  }
-
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    return 0
-  }
-
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-    return 0
+    collectionView.items = items
   }
 }

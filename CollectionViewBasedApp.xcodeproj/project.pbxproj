@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5017FBB2390908C0054C7B6 /* ItemCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5017FBA2390908C0054C7B6 /* ItemCollectionView.swift */; };
 		F5B23C3423900B1E0021AFED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B23C3323900B1E0021AFED /* AppDelegate.swift */; };
 		F5B23C3623900B1E0021AFED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B23C3523900B1E0021AFED /* SceneDelegate.swift */; };
 		F5B23C3823900B1E0021AFED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B23C3723900B1E0021AFED /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F5017FBA2390908C0054C7B6 /* ItemCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionView.swift; sourceTree = "<group>"; };
 		F5B23C3023900B1E0021AFED /* CollectionViewBasedApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewBasedApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5B23C3323900B1E0021AFED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5B23C3523900B1E0021AFED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				F5B23C3323900B1E0021AFED /* AppDelegate.swift */,
 				F5B23C3523900B1E0021AFED /* SceneDelegate.swift */,
 				F5B23C3723900B1E0021AFED /* ViewController.swift */,
+				F5017FBA2390908C0054C7B6 /* ItemCollectionView.swift */,
 				F5B23C4723900C550021AFED /* Item+Protocol.swift */,
 				F5B23C542390292B0021AFED /* Cell+Protocol.swift */,
 				F5B23C5A239039C20021AFED /* Item.swift */,
@@ -185,6 +188,7 @@
 			files = (
 				F5B23C5B239039C20021AFED /* Item.swift in Sources */,
 				F5B23C53239027E90021AFED /* Utils.swift in Sources */,
+				F5017FBB2390908C0054C7B6 /* ItemCollectionView.swift in Sources */,
 				F5B23C502390160D0021AFED /* ImageCollectionViewCell.swift in Sources */,
 				F5B23C5823902C010021AFED /* CollectionViewCollectionViewCell.swift in Sources */,
 				F5B23C4823900C550021AFED /* Item+Protocol.swift in Sources */,
